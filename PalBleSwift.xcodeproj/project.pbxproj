@@ -10,6 +10,30 @@
 		E15AF4C922521D56006097E9 /* PalBleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4BF22521D56006097E9 /* PalBleSwift.framework */; };
 		E15AF4CE22521D56006097E9 /* PalBleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AF4CD22521D56006097E9 /* PalBleSwiftTests.swift */; };
 		E15AF4D022521D56006097E9 /* PalBleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E15AF4C222521D56006097E9 /* PalBleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E15AF4E022521F9D006097E9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4D922521F9D006097E9 /* RxBlocking.framework */; };
+		E15AF4E122521F9D006097E9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DA22521F9D006097E9 /* RxCocoa.framework */; };
+		E15AF4E222521F9D006097E9 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */; };
+		E15AF4E322521F9D006097E9 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DC22521F9D006097E9 /* RxAtomic.framework */; };
+		E15AF4E422521F9D006097E9 /* RxBluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */; };
+		E15AF4E522521F9D006097E9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DE22521F9D006097E9 /* RxSwift.framework */; };
+		E1B2BE71225220A3003C7563 /* PalBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE70225220A3003C7563 /* PalBle.swift */; };
+		E1B2BE79225220B6003C7563 /* ScanListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE72225220B4003C7563 /* ScanListener.swift */; };
+		E1B2BE7A225220B6003C7563 /* Data_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE73225220B4003C7563 /* Data_extension.swift */; };
+		E1B2BE7B225220B6003C7563 /* ScanParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE74225220B4003C7563 /* ScanParameters.swift */; };
+		E1B2BE7C225220B6003C7563 /* BleScanException.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE75225220B4003C7563 /* BleScanException.swift */; };
+		E1B2BE7D225220B6003C7563 /* BluetoothError_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */; };
+		E1B2BE7E225220B6003C7563 /* PalListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE77225220B5003C7563 /* PalListener.swift */; };
+		E1B2BE7F225220B6003C7563 /* ConnectListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE78225220B5003C7563 /* ConnectListener.swift */; };
+		E1B2BE892252213E003C7563 /* PalDeviceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */; };
+		E1B2BE8A2252213E003C7563 /* DeviceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE862252213D003C7563 /* DeviceListener.swift */; };
+		E1B2BE8B2252213E003C7563 /* PalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE872252213E003C7563 /* PalDevice.swift */; };
+		E1B2BE8C2252213E003C7563 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE882252213E003C7563 /* Identifiers.swift */; };
+		E1B2BE9122522149003C7563 /* PalActivatorV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */; };
+		E1B2BE9222522149003C7563 /* PalActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8E22522148003C7563 /* PalActivator.swift */; };
+		E1B2BE9322522149003C7563 /* ActivatorListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8F22522148003C7563 /* ActivatorListener.swift */; };
+		E1B2BE9422522149003C7563 /* PalActivatorV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE9022522149003C7563 /* PalActivatorV1.swift */; };
+		E1B2BE982252215B003C7563 /* PalActivatorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE962252215B003C7563 /* PalActivatorData.swift */; };
+		E1B2BE992252215B003C7563 /* DaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE972252215B003C7563 /* DaySummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +53,31 @@
 		E15AF4C822521D56006097E9 /* PalBleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalBleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15AF4CD22521D56006097E9 /* PalBleSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalBleSwiftTests.swift; sourceTree = "<group>"; };
 		E15AF4CF22521D56006097E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E15AF4D922521F9D006097E9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		E15AF4DA22521F9D006097E9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
+		E15AF4DC22521F9D006097E9 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxAtomic.framework; sourceTree = "<group>"; };
+		E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBluetoothKit.framework; sourceTree = "<group>"; };
+		E15AF4DE22521F9D006097E9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		E15AF4DF22521F9D006097E9 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
+		E1B2BE70225220A3003C7563 /* PalBle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalBle.swift; sourceTree = "<group>"; };
+		E1B2BE72225220B4003C7563 /* ScanListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanListener.swift; sourceTree = "<group>"; };
+		E1B2BE73225220B4003C7563 /* Data_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_extension.swift; sourceTree = "<group>"; };
+		E1B2BE74225220B4003C7563 /* ScanParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanParameters.swift; sourceTree = "<group>"; };
+		E1B2BE75225220B4003C7563 /* BleScanException.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleScanException.swift; sourceTree = "<group>"; };
+		E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothError_extension.swift; sourceTree = "<group>"; };
+		E1B2BE77225220B5003C7563 /* PalListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalListener.swift; sourceTree = "<group>"; };
+		E1B2BE78225220B5003C7563 /* ConnectListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectListener.swift; sourceTree = "<group>"; };
+		E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalDeviceFactory.swift; sourceTree = "<group>"; };
+		E1B2BE862252213D003C7563 /* DeviceListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListener.swift; sourceTree = "<group>"; };
+		E1B2BE872252213E003C7563 /* PalDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalDevice.swift; sourceTree = "<group>"; };
+		E1B2BE882252213E003C7563 /* Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorV2.swift; sourceTree = "<group>"; };
+		E1B2BE8E22522148003C7563 /* PalActivator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivator.swift; sourceTree = "<group>"; };
+		E1B2BE8F22522148003C7563 /* ActivatorListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatorListener.swift; sourceTree = "<group>"; };
+		E1B2BE9022522149003C7563 /* PalActivatorV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorV1.swift; sourceTree = "<group>"; };
+		E1B2BE962252215B003C7563 /* PalActivatorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorData.swift; sourceTree = "<group>"; };
+		E1B2BE972252215B003C7563 /* DaySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +85,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15AF4E222521F9D006097E9 /* CryptoSwift.framework in Frameworks */,
+				E15AF4E322521F9D006097E9 /* RxAtomic.framework in Frameworks */,
+				E15AF4E522521F9D006097E9 /* RxSwift.framework in Frameworks */,
+				E15AF4E422521F9D006097E9 /* RxBluetoothKit.framework in Frameworks */,
+				E15AF4E122521F9D006097E9 /* RxCocoa.framework in Frameworks */,
+				E15AF4E022521F9D006097E9 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +108,7 @@
 		E15AF4B522521D56006097E9 = {
 			isa = PBXGroup;
 			children = (
+				E1B2BE6F22521FF0003C7563 /* Frameworks */,
 				E15AF4C122521D56006097E9 /* PalBleSwift */,
 				E15AF4CC22521D56006097E9 /* PalBleSwiftTests */,
 				E15AF4C022521D56006097E9 /* Products */,
@@ -71,6 +127,15 @@
 		E15AF4C122521D56006097E9 /* PalBleSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E1B2BE8322522126003C7563 /* devices */,
+				E1B2BE75225220B4003C7563 /* BleScanException.swift */,
+				E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */,
+				E1B2BE78225220B5003C7563 /* ConnectListener.swift */,
+				E1B2BE73225220B4003C7563 /* Data_extension.swift */,
+				E1B2BE77225220B5003C7563 /* PalListener.swift */,
+				E1B2BE72225220B4003C7563 /* ScanListener.swift */,
+				E1B2BE74225220B4003C7563 /* ScanParameters.swift */,
+				E1B2BE70225220A3003C7563 /* PalBle.swift */,
 				E15AF4C222521D56006097E9 /* PalBleSwift.h */,
 				E15AF4C322521D56006097E9 /* Info.plist */,
 			);
@@ -84,6 +149,53 @@
 				E15AF4CF22521D56006097E9 /* Info.plist */,
 			);
 			path = PalBleSwiftTests;
+			sourceTree = "<group>";
+		};
+		E1B2BE6F22521FF0003C7563 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */,
+				E15AF4DC22521F9D006097E9 /* RxAtomic.framework */,
+				E15AF4D922521F9D006097E9 /* RxBlocking.framework */,
+				E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */,
+				E15AF4DA22521F9D006097E9 /* RxCocoa.framework */,
+				E15AF4DE22521F9D006097E9 /* RxSwift.framework */,
+				E15AF4DF22521F9D006097E9 /* RxTest.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1B2BE8322522126003C7563 /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2BE862252213D003C7563 /* DeviceListener.swift */,
+				E1B2BE882252213E003C7563 /* Identifiers.swift */,
+				E1B2BE872252213E003C7563 /* PalDevice.swift */,
+				E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */,
+				E1B2BE842252212D003C7563 /* activator */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		E1B2BE842252212D003C7563 /* activator */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2BE952252214B003C7563 /* data */,
+				E1B2BE8F22522148003C7563 /* ActivatorListener.swift */,
+				E1B2BE8E22522148003C7563 /* PalActivator.swift */,
+				E1B2BE9022522149003C7563 /* PalActivatorV1.swift */,
+				E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */,
+			);
+			path = activator;
+			sourceTree = "<group>";
+		};
+		E1B2BE952252214B003C7563 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2BE972252215B003C7563 /* DaySummary.swift */,
+				E1B2BE962252215B003C7563 /* PalActivatorData.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +260,7 @@
 				TargetAttributes = {
 					E15AF4BE22521D56006097E9 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					E15AF4C722521D56006097E9 = {
 						CreatedOnToolsVersion = 10.2;
@@ -194,6 +307,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B2BE9422522149003C7563 /* PalActivatorV1.swift in Sources */,
+				E1B2BE992252215B003C7563 /* DaySummary.swift in Sources */,
+				E1B2BE9322522149003C7563 /* ActivatorListener.swift in Sources */,
+				E1B2BE7F225220B6003C7563 /* ConnectListener.swift in Sources */,
+				E1B2BE7E225220B6003C7563 /* PalListener.swift in Sources */,
+				E1B2BE7C225220B6003C7563 /* BleScanException.swift in Sources */,
+				E1B2BE8A2252213E003C7563 /* DeviceListener.swift in Sources */,
+				E1B2BE7D225220B6003C7563 /* BluetoothError_extension.swift in Sources */,
+				E1B2BE982252215B003C7563 /* PalActivatorData.swift in Sources */,
+				E1B2BE892252213E003C7563 /* PalDeviceFactory.swift in Sources */,
+				E1B2BE7B225220B6003C7563 /* ScanParameters.swift in Sources */,
+				E1B2BE9122522149003C7563 /* PalActivatorV2.swift in Sources */,
+				E1B2BE7A225220B6003C7563 /* Data_extension.swift in Sources */,
+				E1B2BE79225220B6003C7563 /* ScanListener.swift in Sources */,
+				E1B2BE8B2252213E003C7563 /* PalDevice.swift in Sources */,
+				E1B2BE9222522149003C7563 /* PalActivator.swift in Sources */,
+				E1B2BE8C2252213E003C7563 /* Identifiers.swift in Sources */,
+				E1B2BE71225220A3003C7563 /* PalBle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +472,7 @@
 		E15AF4D422521D56006097E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -348,8 +480,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PalBleSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +496,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.paltechnologies.PalBleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +505,7 @@
 		E15AF4D522521D56006097E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,8 +513,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PalBleSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,6 +537,7 @@
 		E15AF4D722521D56006097E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LG7FWJE4T4;
 				INFOPLIST_FILE = PalBleSwiftTests/Info.plist;
@@ -409,6 +556,7 @@
 		E15AF4D822521D56006097E9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LG7FWJE4T4;
 				INFOPLIST_FILE = PalBleSwiftTests/Info.plist;
