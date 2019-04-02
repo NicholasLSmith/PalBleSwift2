@@ -20,6 +20,7 @@ extension Data {
         return self.base64EncodedString()
             .replacingOccurrences(of: "+", with: "-")
             .replacingOccurrences(of: "/", with: "_")
+            + "\n"
             //.replacingOccurrences(of: "=", with: "")
     }
     
@@ -44,6 +45,7 @@ extension Data {
         let string = base64String
             .replacingOccurrences(of: "-", with: "+")
             .replacingOccurrences(of: "_", with: "/")
+            .replacingOccurrences(of: "\n", with: "")
         /*while string.count % 4 != 0 {
             string = string.appending("=")
         }*/
