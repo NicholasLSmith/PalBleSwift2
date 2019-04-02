@@ -160,12 +160,15 @@ enum PalDeviceService: String, ServiceIdentifier {
         setListener(listener: listener)
         
         if(key != nil) {
+            print("PalDevice: connect: key: ", key!);
             if(key!.count == 24 || key!.count == 25) {
                 convertStringToKey(keyBase64: key!)
             } else if(key!.count != 0) {
                 sendInvalidEncryptionKey()
                 return
             }
+        } else {
+            print("PalDevice: connect: no key");
         }
         connect()
     }
@@ -191,6 +194,7 @@ enum PalDeviceService: String, ServiceIdentifier {
     }
     
     func convertStringToKey(keyBase64: String?) -> Data? {
+        print("PalDevice: convertingStringToKey: Starting");
         if(keyBase64 == nil) {
             return nil
         }
@@ -198,6 +202,7 @@ enum PalDeviceService: String, ServiceIdentifier {
         //key = Data(base64Encoded: keyString, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
         
         key = Data.fromBase64UrlString(base64String: keyBase64!)
+        print("PalDevice: convertingStringToKey: Done: ", key?.toHexString() ?? "Error");
         
         return key
     }

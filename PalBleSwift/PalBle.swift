@@ -207,6 +207,11 @@ import RxSwift
             return
         }
         stopScan()
+        if(foundDevice is PalActivatorV2) {
+            print("PalBle: onConnectResult: Connecting to v2 device");
+        } else {
+            print("PalBle: onConnectResult: Connecting to v1 device");
+        }
         onDeviceFound()
         connectToDevice(foundDevice: foundDevice!)
     }
