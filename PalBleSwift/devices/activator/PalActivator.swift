@@ -175,6 +175,8 @@ enum PalActivatorError: Error {
                 print("PalActivator: connectToFetchData: Connected")
                 self.peripheral = connectedPer
                 self.sendOnConnected()
+            }, onDispose: {
+                self.compositeDisposable = nil
             })
             .flatMapFirst { self.getEncryptionCheck(peripheral: $0) }
             .subscribe(onNext: self.onEncryptionCheckResult, onError: self.onFetchError)) == nil) {
@@ -208,6 +210,7 @@ enum PalActivatorError: Error {
             if(!hasEncryptionKey()) {
                 onExistingEncryptionKeyNeeded()
             } else if(!hasValidEncryptionKey()) {
+                disconnect()
                 onInvalidEncryptionKey()
             } else {
                 fetchAllData()
