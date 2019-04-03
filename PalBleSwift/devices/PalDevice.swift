@@ -160,7 +160,7 @@ enum PalDeviceService: String, ServiceIdentifier {
         setListener(listener: listener)
         
         if(key != nil) {
-            print("PalDevice: connect: key: ", key!);
+            print("PalBleSwift: PalDevice: connect: key: \(key!)");
             if(key!.count == 24 || key!.count == 25) {
                 convertStringToKey(keyBase64: key!)
             } else if(key!.count != 0) {
@@ -168,7 +168,7 @@ enum PalDeviceService: String, ServiceIdentifier {
                 return
             }
         } else {
-            print("PalDevice: connect: no key");
+            print("PalBleSwift: PalDevice: connect: no key");
         }
         connect()
     }
@@ -193,18 +193,15 @@ enum PalDeviceService: String, ServiceIdentifier {
         return listener != nil
     }
     
-    func convertStringToKey(keyBase64: String?) -> Data? {
-        print("PalDevice: convertingStringToKey: Starting");
+    func convertStringToKey(keyBase64: String?) {
+        print("PalBleSwift: PalDevice: convertStringToKey: Starting");
         if(keyBase64 == nil) {
-            return nil
+            print("PalBleSwift: PalDevice: convertStringToKey: keyBase64 undefined")
+            return
         }
-        //let keyString = keyBase64!.replacingOccurrences(of: "_", with: "/").replacingOccurrences(of: "-", with: "+")
-        //key = Data(base64Encoded: keyString, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
         
         key = Data.fromBase64UrlString(base64String: keyBase64!)
-        print("PalDevice: convertingStringToKey: Done: ", key?.toHexString() ?? "Error");
-        
-        return key
+        print("PalBleSwift: PalDevice: convertStringToKey: Done: \(key?.toHexString() ?? "Error")");
     }
     
     func subscribeToConnectionState() {
@@ -214,22 +211,22 @@ enum PalDeviceService: String, ServiceIdentifier {
         
         connectionStateDisposable = bleDevice.observeConnection()
             .do(onCompleted: {
-                print("PalBle: subscribeToConnectionState: observation ended")
+                print("PalBleSwift: PalDevice: subscribeToConnectionState: observation ended")
                 self.connectionStateDisposable = nil
                 if(self.compositeDisposable == nil) {
                     self.compositeDisposable = CompositeDisposable()
                 } else {
-                    print("PalBle: subscribeToConnectionState: Disposable not disposed")
+                    print("PalBleSwift: PalDevice: subscribeToConnectionState: Disposable not disposed")
                 }
                 if(self.hasDeviceListener()) {
                     self.listener!.onDisconnected()
                 }
             })
-            .subscribe(onNext: onConnectionStateResult)
+            .subscribe(onNext: onConnectionStateResult, onError: onConnectionStateError)
     }
     
     func onConnectionStateResult(connected: Bool) {
-        print("PalDevice: onConnectionStateResult: " + (connected ? "Connected" : "Disconnected"))
+        print("PalBleSwift: PalDevice: onConnectionStateResult: " + (connected ? "Connected" : "Disconnected"))
         if(!connected) {
             if(reconnectOnDisconnect > 0) {
                 timerDisposable = Completable.empty().delay(retryTime, scheduler: MainScheduler.instance)
@@ -246,6 +243,10 @@ enum PalDeviceService: String, ServiceIdentifier {
             }
             reconnectOnDisconnect -= 1
         }
+    }
+    
+    func onConnectionStateError(error: Error) {
+        print("PalBleSwift: PalDevice: onConnectionStateError: \(error)")
     }
     
     
@@ -303,115 +304,5 @@ enum PalDeviceService: String, ServiceIdentifier {
             listener!.onRetrying(triesRemaining: triesRemaining)
         }
     }
-
-    
-    
-    
-    
-    
-    
 }
-
-
-
-/*
-//Encryption
-var m_key: Data?
-//var updatekey: Bool = false //Flags if this is a new key or an updated key
-var m_salt: Data?
-
-
-//MARK: Encryption
-func secureConnection() {
-    message("Securing connection")
-    
-    fetchSalt()
-}
-
-
-func fetchSalt() {
-    if(m_salt == nil) {
-        if(m_connecionAttempted > 0 && self.saltChar != nil) {
-            //m_connecionAttempted -= 1
-            message("Fetching salt");
-            SitfitCloudComms.sharedInstance.logEntry(code: 230, extraInfo: "Get salt")
-            self.m_sitfitPeripheral.readValue(for: self.saltChar!)
-            //m_scanTimer = Timer.scheduledTimer(timeInterval: Double(3), target: self, selector: #selector(SitBT.fetchSalt), userInfo: nil, repeats: false)
-        } else {
-            SitfitCloudComms.sharedInstance.logEntry(code: 415, extraInfo: "Get salt failed")
-            m_userTry = SITBT_ERROR_BLE_CONNECTION_FAILED
-            disconnect()
-        }
-    } else {
-        SitfitCloudComms.sharedInstance.logEntry(code: 420, extraInfo: "Already salt")
-        m_userTry = SITBT_ERROR_BLE_CONNECTION_FAILED
-        disconnect()
-    }
-}
-
-
-
-func generateKey() {
-    message("Generating key")
-    
-    //Initilise NSDatas
-    let tempBytes:[UInt8] = [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
-    m_key = Data(bytes: UnsafePointer<UInt8>(tempBytes), count: 16)
-    let keyPointer = UnsafeMutablePointer<UInt8>(mutating: (m_key! as NSData).bytes.bindMemory(to: UInt8.self, capacity: m_key!.count))
-    SecRandomCopyBytes(kSecRandomDefault, 16, keyPointer)
-    
-    message("Key generated: " + m_key!.toHexString())
-    m_salt = nil
-    
-    
-    //Save the key as soon as it's generated
-    m_delegate!.saveKey(m_key!)
-    
-}
-
-
-func decryptData(_ encryptedData: Data) -> Data? {
-    if encryptedData.count == 16 {
-        message("Encrypted data: " + encryptedData.toHexString())
-        
-        let result = NSMutableData(length: 16)!
-        let keyPointer = UnsafeMutablePointer<UInt8>(mutating: (m_key! as NSData).bytes.bindMemory(to: UInt8.self, capacity: m_key!.count))
-        let keyLength = size_t(kCCKeySizeAES128)
-        let saltPointer = UnsafeMutablePointer<UInt8>(mutating: (m_salt! as NSData).bytes.bindMemory(to: UInt8.self, capacity: m_salt!.count))
-        let dataPointer = UnsafeMutablePointer<UInt8>(mutating: (encryptedData as NSData).bytes.bindMemory(to: UInt8.self, capacity: encryptedData.count))
-        let operation: CCOperation = UInt32(kCCDecrypt)
-        let algoritm: CCAlgorithm = UInt32(kCCAlgorithmAES128)
-        
-        var numBytesDecrypted: size_t = 0
-        
-        let decryptionStatus = CCCrypt(operation,
-                                       algoritm,
-                                       0x0000,
-                                       keyPointer, keyLength,
-                                       saltPointer,
-                                       dataPointer, size_t(16),
-                                       result.mutableBytes, result.length,
-                                       &numBytesDecrypted)
-        
-        if UInt32(decryptionStatus) == UInt32(kCCSuccess) {
-            message("Decrypted data: " + result.toHexString())
-            
-            //Fiddle the thing
-            /*for i in (result as NSArray as [UInt8]) {
-             result[i] = UInt8(result[i] ^ 48)
-             }*/
-            
-            return result as Data
-        } else {
-            message("Decryption failed \(decryptionStatus)")
-            SitfitCloudComms.sharedInstance.logEntry(code: 417, extraInfo: "Decryption failed")
-            return nil
-        }
-    }
-    
-    message("Data is not 16 bytes long (\(encryptedData.count))")
-    SitfitCloudComms.sharedInstance.logEntry(code: 417, extraInfo: "Decryption failed")
-    return nil
-}
- */
 

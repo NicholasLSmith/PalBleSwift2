@@ -56,37 +56,39 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
     
     
     public override init(scanResult: ScannedPeripheral) {
-        print("PalActivatorV2: init")
+        print("PalBleSwift: PalActivatorV2: init")
         super.init(scanResult: scanResult)
     }
     
     override public func setHapticFeedback(on: Bool) -> Bool {
         if(mode == Mode.FIELD) {
-            print("PalActivatorV2: setHapticFeedback: Not in field mode")
+            print("PalBleSwift: PalActivatorV2: setHapticFeedback: Not in field mode")
             return false
         }
         
         if(compositeDisposable != nil) {
-            print("PalActivatorV2: setHapticFeedback: Already connected")
+            print("PalBleSwift: PalActivatorV2: setHapticFeedback: Already connected")
             return false
         }
         
-        print("PalActivatorV2: setHapticFeedback: Connecting to set haptic")
+        print("PalBleSwift: PalActivatorV2: setHapticFeedback: Connecting to set haptic")
         compositeDisposable = CompositeDisposable()
-        compositeDisposable!.insert(bleDevice.establishConnection()
+        if(compositeDisposable!.insert(bleDevice.establishConnection()
             .flatMapFirst { $0.writeValue(Data.fromHexString(string: (on ? PalActivatorV2.COMMAND_SET_HAPTIC_ON : PalActivatorV2.COMMAND_SET_HAPTIC_OFF)), for: PalDeviceCharacteristic.setup, type: .withResponse) }
-            .subscribe(onNext: onHapticResult, onError: onHapticError))
+            .subscribe(onNext: onHapticResult, onError: onHapticError)) == nil) {
+            return false
+        }
         return true
     }
     
     func onHapticResult(char: Characteristic) {
-        print("PalActivatorV2: onHapticResult: Haptic command sent - " + (char.value?.hexadecimalString)!)
+        print("PalBleSwift: PalActivatorV2: onHapticResult: Haptic command sent - " + (char.value?.hexadecimalString ?? "value not found"))
         dispose()
         sendOnHapticSet(on: (char.value?.hexadecimalString)! == PalActivatorV2.COMMAND_SET_HAPTIC_ON)
     }
     
     func onHapticError(error: Error) {
-        print("PalActivatorV2: onHapticError: " + error.localizedDescription)
+        print("PalBleSwift: PalActivatorV2: onHapticError: " + error.localizedDescription)
         dispose()
         throwError(error: error)
     }
@@ -94,41 +96,42 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
     
     override public func setSleep() {
         if(mode == Mode.SLEEP) {
-            print("PalActivatorV2: setSleep: Already in sleep mode")
+            print("PalBleSwift: PalActivatorV2: setSleep: Already in sleep mode")
             return
         }
         if(compositeDisposable != nil) {
-            print("PalActivatorV2: setSleep: Already connected")
+            print("PalBleSwift: PalActivatorV2: setSleep: Already connected")
             return
         }
         
-        print("PalActivatorV2: setSleep: Connecting to put to sleep")
+        print("PalBleSwift: PalActivatorV2: setSleep: Connecting to put to sleep")
         reconnectOnDisconnect = 0
         compositeDisposable = CompositeDisposable()
-        compositeDisposable!.insert(bleDevice.establishConnection()
+        if(compositeDisposable!.insert(bleDevice.establishConnection()
             .flatMapFirst { $0.writeValue(Data.fromHexString(string: PalActivatorV2.COMMAND_SET_MODE_SLEEP), for: PalDeviceCharacteristic.setup, type: .withResponse) }
-            .subscribe(onNext: onSleepResult, onError: onSleepError)
-        )
+            .subscribe(onNext: onSleepResult, onError: onSleepError)) == nil) {
+            print("PalBleSwift: PalActivatorV2: setSleep: Error")
+        }
     }
     
     private func onSleepResult(char: Characteristic) {
         reconnectOnDisconnect = 1
-        print("PalActivatorV2: onSleepResult: Sleep command sent - " + (char.value?.hexadecimalString)!)
+        print("PalBleSwift: PalActivatorV2: onSleepResult: Sleep command sent - " + (char.value?.hexadecimalString ?? "value not found"))
         dispose()
         mode = Mode.SLEEP
         sendOnSleep()
     }
     
     private func onSleepError(error: Error) {
-        print("PalActivatorV2: onSleepError: enter");
+        print("PalBleSwift: PalActivatorV2: onSleepError: enter");
         switch(error) {
         case BluetoothError.peripheralDisconnected(_, _):
             if(reconnectOnDisconnect > 0) {
-                print("PalActivatorV2: onSleepError: disconnected")
+                print("PalBleSwift: PalActivatorV2: onSleepError: disconnected")
                 break
             }
         default:
-            print("PalActivatorV2: onSleepError: " + (error as! BluetoothError).description)
+            print("PalBleSwift: PalActivatorV2: onSleepError: " + (error as! BluetoothError).description)
             throwError(error: error)
         }
         dispose()
@@ -149,8 +152,8 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
             peripheral.readValue(for: DeviceCharacteristic.encryption),
             peripheral.readValue(for: DeviceCharacteristic.time))
         { (encryption, time) in
-            print("getEncryptionCheck: Info: \(encryption.value?.hexadecimalString ?? "no value")")
-            print("getEncryptionCheck: Data: \(time.value?.hexadecimalString ?? "no value")")
+            print("PalBleSwift: PalActivatorV2: getEncryptionCheck: Info: \(encryption.value?.hexadecimalString ?? "no value")")
+            print("PalBleSwift: PalActivatorV2: getEncryptionCheck: Data: \(time.value?.hexadecimalString ?? "no value")")
             return (encryption, time)
         }
     }
@@ -160,7 +163,7 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
         stage0 = false
         stage1 = false
         
-        compositeDisposable!.insert(peripheral!.writeValue(getTimeFromPhone(), for: PalDeviceCharacteristic.time, type: .withResponse)
+        if(compositeDisposable!.insert(peripheral!.writeValue(getTimeFromPhone(), for: PalDeviceCharacteristic.time, type: .withResponse)
             .flatMap { char in
                 PrimitiveSequence.zip(
                     self.peripheral!.readValue(for: PalActivatorV2Characteristic.today),
@@ -171,7 +174,9 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
                 { (today, sedPer, step, upright, sedentary) in
                     return (today, sedPer, step, upright, sedentary)
                 }}
-            .subscribe(onSuccess: onFetchResult, onError: onFetchError))
+            .subscribe(onSuccess: onFetchResult, onError: onFetchError)) == nil) {
+            print("PalBleSwift: PalActivatorV2: fetchAllData: Error")
+        }
         
         
         /*peripheral!.writeValue(Data.fromHexString(string: PalActivatorV2.COMMAND_SET_HAPTIC_ON), for: PalDeviceCharacteristic.time, type: .withResponse)

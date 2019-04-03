@@ -53,14 +53,17 @@ enum PalActivatorError: Error {
     }
     
     @objc public func setEncryptionKey(keyBase64: String) {
-        let key = convertStringToKey(keyBase64: keyBase64)
-        if(hasEncryptionKey() && key != nil) {
+        convertStringToKey(keyBase64: keyBase64)
+        if(hasEncryptionKey()) {
             if(hasValidEncryptionKey()) {
+                print("PalBleSwift: PalActivator: setEncryptionKey: fetch all data");
                 fetchAllData()
             } else {
+                print("PalBleSwift: PalActivator: setEncryptionKey: encrypted then fetch all data");
                 encryptThenFetchAllData(key: key!)
             }
         } else {
+            print("PalBleSwift: PalActivator: setEncryptionKey: disconnect");
             disconnect()
         }
     }
@@ -80,8 +83,7 @@ enum PalActivatorError: Error {
     
     
     override func connect() {
-        print("Lets connect");
-//        subscribeToConnectionState()
+        subscribeToConnectionState()
         if(mode == Mode.SLEEP || mode == Mode.SERVICE) {
             connectToWake()
         } else {
@@ -126,17 +128,22 @@ enum PalActivatorError: Error {
     func connectToWake() {}    
     
     func connectToWake(wakingCharacteristicIdentifier: CharacteristicIdentifier) {
-        print("PalActivator: connectToWake: Wake starting")
+        print("PalBleSwift: PalActivator: connectToWake: Wake starting")
         sendOnWaking()
         
         compositeDisposable = CompositeDisposable()
-        compositeDisposable!.insert(bleDevice.establishConnection()
-            .flatMap { $0.writeValue(Data.fromHexString(string: self.COMMAND_WAKE_UP), for: wakingCharacteristicIdentifier, type: .withResponse) }
-            .subscribe(onNext: onWakeResult, onError: onWakeError))
+        if(compositeDisposable!.insert(bleDevice.establishConnection()
+            .do(onNext: { connectedPer in
+                print("PalBleSwift: PalActivator: connectToWake: onNext")
+            })
+            .flatMapFirst { $0.writeValue(Data.fromHexString(string: self.COMMAND_WAKE_UP), for: wakingCharacteristicIdentifier, type: .withResponse) }
+            .subscribe(onNext: self.onWakeResult, onError: self.onWakeError)) == nil) {
+            print("PalBleSwift: PalActivator: connectToWake: Error")
+        }
     }
     
     func onWakeResult(char: Characteristic) {
-        print("PalActivator: onWakeResult: Wake command sent - " + (char.value?.hexadecimalString)!)
+        print("PalBleSwift: PalActivator: onWakeResult: Wake command sent - " + (char.value?.hexadecimalString ?? "value not found"))
         reconnectOnDisconnect = PalDevice.RECONNECTION_ATTEMPTS + 1
         retryTime = 1.0
         mode = Mode.FIELD
@@ -145,15 +152,15 @@ enum PalActivatorError: Error {
     }
     
     func onWakeError(error: Error) {
-        print("PalActivator: onWakeError: enter");
+        print("PalBleSwift: PalActivator: onWakeError: enter");
         switch(error) {
         case BluetoothError.peripheralDisconnected(_, _):
             if(reconnectOnDisconnect > 0) {
-                print("PalActivator: onWakeError: disconnected")
+                print("PalBleSwift: PalActivator: onWakeError: disconnected")
                 break
             }
         default:
-            print("PalActivator: onWakeError: " + (error as! BluetoothError).description)
+            print("PalBleSwift: PalActivator: onWakeError: " + (error as! BluetoothError).description)
             throwError(error: error)
         }
         compositeDisposable?.dispose()
@@ -161,16 +168,18 @@ enum PalActivatorError: Error {
     
     
     private func connectToFetchData() {
-        print("PalActivator: connectToFetchData: Starting")
+        print("PalBleSwift: PalActivator: connectToFetchData: Starting")
         compositeDisposable = CompositeDisposable()
-        compositeDisposable!.insert(bleDevice.establishConnection()
+        if(compositeDisposable!.insert(bleDevice.establishConnection()
             .do(onNext: { connectedPer in
                 print("PalActivator: connectToFetchData: Connected")
                 self.peripheral = connectedPer
                 self.sendOnConnected()
             })
             .flatMapFirst { self.getEncryptionCheck(peripheral: $0) }
-            .subscribe(onNext: self.onEncryptionCheckResult, onError: self.onFetchError))
+            .subscribe(onNext: self.onEncryptionCheckResult, onError: self.onFetchError)) == nil) {
+            print("PalBleSwift: PalActivator: connectToFetchData: Error")
+        }
     }
     
     func getEncryptionCheck(peripheral: Peripheral) -> PrimitiveSequence<SingleTrait, (Characteristic, Characteristic)> {
@@ -245,12 +254,14 @@ enum PalActivatorError: Error {
     func encryptThenFetchAllData(key: Data) {}
     
     func encryptThenFetchAllData(key: Data, characteristic: CharacteristicIdentifier) {
-        compositeDisposable?.insert(peripheral!.writeValue(key, for: characteristic, type: .withResponse)
+        if(compositeDisposable?.insert(peripheral!.writeValue(key, for: characteristic, type: .withResponse)
             .asObservable()
             .flatMapFirst({ (_) -> PrimitiveSequence<SingleTrait, (Characteristic, Characteristic)> in
                 self.getEncryptionCheck(peripheral: self.peripheral!)
             })
-            .subscribe(onNext: self.onEncryptionCheckResult, onError: self.onFetchError))
+            .subscribe(onNext: self.onEncryptionCheckResult, onError: self.onFetchError)) == nil) {
+            print("PalBleSwift: PalActivator: encryptThenFetchAllData: Error")
+        }
     }
     
     
@@ -312,14 +323,13 @@ enum PalActivatorError: Error {
         do {
             let aes = try AES(key: key!.bytes, blockMode: CBC(iv: salt!.bytes))
             var decrypted = try aes.decrypt(encryptedData.bytes)
-            print("decrypt: decrypted: \(decrypted.toHexString())")
             for i in  0...decrypted.count - 1 {
                 decrypted[i] ^= 48
             }
-            print("decrypt2: decrypted: \(decrypted.toHexString())")
+            print("PalBleSwift: PalActivator: decrypt: \(decrypted.toHexString())")
             return Data(decrypted)
         } catch {
-            print("decrypt: Error: \(error)")
+            print("PalBleSwift: PalActivator: Error: \(error)")
             return nil
         }
     }

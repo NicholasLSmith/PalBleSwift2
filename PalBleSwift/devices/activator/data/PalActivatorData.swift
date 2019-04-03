@@ -63,15 +63,12 @@ import Foundation
         formatter.timeZone = TimeZone(identifier:"UTC")
         formatter.dateFormat = "yyyyMMdd"
         let palDate = formatter.date(from: "20170101")
-        //print("PalActivatorData: setParameters: \(palDate!)")
         currentPhoneSecondsSincePalTime = UInt(-(palDate!.timeIntervalSinceNow))
-        //print("PalActivatorData: setParameters: \(currentPhoneSecondsSincePalTime)")
         currentPhoneTimeZone = TimeZone.current.secondsFromGMT() / 900
-        //print("PalActivatorData: setParameters: \(currentPhoneTimeZone)")
         
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        print("PalActivatorData: setParameters: Device time: " + df.string(from: getCurrentDeviceDate()))
+        print("PalBleSwift: PalActivatorData: setParameters: Device time: " + df.string(from: getCurrentDeviceDate()))
     }
     
     public func setData(daily: Data, sedentaryPer: Data, step: Data, upright: Data, sedentary: Data) {
