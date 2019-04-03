@@ -56,12 +56,12 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
     
     
     public override init(scanResult: ScannedPeripheral) {
-        print("PalBleSwift: PalActivatorV2: init")
+        //print("PalBleSwift: PalActivatorV2: init")
         super.init(scanResult: scanResult)
     }
     
     override public func setHapticFeedback(on: Bool) -> Bool {
-        if(mode == Mode.FIELD) {
+        if(mode != Mode.FIELD) {
             print("PalBleSwift: PalActivatorV2: setHapticFeedback: Not in field mode")
             return false
         }

@@ -58,6 +58,7 @@ import RxSwift
     }
     
     @objc public func startScan() {
+        print("PalBleSwift: PalBle: startScan: Called")
         if(!isScanning()) {
             subscribeToScan()
         }
@@ -76,19 +77,19 @@ import RxSwift
     
     
     @objc public func connect(serial: String) {
-        print("Connecting with serial only")
+        print("PalBleSwift: PalBle: connect: Connecting with serial only")
         connect(serial: serial, key: nil)
     }
     
     @objc public func connect(serial: String, key: String?) {
-        print("Connecting with serial and key")
+        print("PalBleSwift: PalBle: connect: Connecting with serial and key")
         connect(serial: serial, key: key, timeOut: 10)
     }
     
     @objc public func connect(serial: String, key: String?, timeOut: Int) {
-        print("Connecting with serial, key, and timeout")
+        print("PalBleSwift: PalBle: connect: Connecting with serial, key, and timeout")
         if(serial.count != 6) {
-            print("Invalid serial: " + String(serial.count))
+            print("PalBleSwift: PalBle: connect: Invalid serial: " + String(serial.count))
             return
         }
         self.serialString = serial
@@ -128,7 +129,7 @@ import RxSwift
             .take(1)
             .flatMap { _ in self.rxBleClient.scanForPeripherals(withServices: nil) }
             .timeout(timeout, scheduler: MainScheduler.instance)
-            .do(onCompleted: self.scanDone)
+            .do(onDispose: self.scanDone)
             .subscribe(onNext: onScanResult, onError: onScanError)
     }
     
@@ -161,15 +162,21 @@ import RxSwift
         if(error is BluetoothError) {
             handleBleScanException(bleScanException: error as! BluetoothError)
         } else if(error is RxError) {
-            print("RXError: ", error.localizedDescription)
+            switch (error as! RxError) {
+            case RxError.timeout:
+                break
+            default:
+                print("PalBleSwift: PalBle: onScanError: RxError: ", error.localizedDescription)
+                throwBleError(message: "Internal error error", reason: 7)
+            }
         }
     }
     
     private func scanDone() {
+        dispose()
         if(!scanStopped) {
             onScanTimeout()
         }
-        dispose()
     }
     
     private func dispose() {
@@ -178,9 +185,8 @@ import RxSwift
     
     
     func connect() {
-        print("Running connect")
         if(!hasDeviceListener()) {
-            print("No device listener")
+            print("PalBleSwift: PalBle: connect: No device listener")
             return
         }
         if(isScanning()) {
@@ -193,11 +199,11 @@ import RxSwift
         scanStopped = false;
         mainDisposable = rxBleClient.observeState()
             .startWith(rxBleClient.state)
-            .filter { $0 == .poweredOn }
+            .filter { $0 == .poweredOn || $0 == .poweredOff }
             .take(1)
             .flatMap { _ in self.rxBleClient.scanForPeripherals(withServices: nil) }
             .timeout(Double(timeOut), scheduler: MainScheduler.instance)
-            .do(onCompleted: self.connectionDone)
+            .do(onDispose: self.connectionDone)
             .subscribe(onNext: onConnectResult, onError: onConnectError)
     }
     
@@ -208,9 +214,9 @@ import RxSwift
         }
         stopScan()
         if(foundDevice is PalActivatorV2) {
-            print("PalBle: onConnectResult: Connecting to v2 device");
+            print("PalBleSwift: PalBle: onConnectResult: Connecting to v2 device");
         } else {
-            print("PalBle: onConnectResult: Connecting to v1 device");
+            print("PalBleSwift: PalBle: onConnectResult: Connecting to v1 device");
         }
         onDeviceFound()
         connectToDevice(foundDevice: foundDevice!)
@@ -226,9 +232,11 @@ import RxSwift
         if(error is BluetoothError) {
             handleBleScanException(bleScanException: error as! BluetoothError)
         } else if(error is RxError) {
-            if((error as! RxError).debugDescription.contains("timeout")) {
-                throwBleError(message: "Bluetooth disabled", reason: 1)
-            } else {
+            switch (error as! RxError) {
+            case RxError.timeout:
+                break
+            default:
+                print("PalBleSwift: PalBle: onConnectError: RxError: ", error.localizedDescription)
                 throwBleError(message: "Internal error error", reason: 7)
             }
         }
@@ -329,7 +337,7 @@ import RxSwift
         } else if(hasConnectListener()) {
             connectListener!.onConnectError(connectionException: BleScanException(message: message, reason: reason))
         } else {
-            print("PalBle: throwBleError: " + message);
+            print("PalBleSwift: PalBle: throwBleError: " + message);
         }
     }
     
@@ -363,11 +371,11 @@ import RxSwift
     }
     
     @objc public func printSomething() {
-        print("Hello");
+        print("PalBleSwift: PalBle: printSomething: Hello");
     }
     
     @objc static public func shout() {
-        print("HELLO!");
+        print("PalBleSwift: PalBle: shout: HELLO!");
     }
     
     
@@ -377,6 +385,6 @@ import RxSwift
     
     
     @objc public func sayHeelo() {
-        print("Heelo")
+        print("PalBleSwift: PalBle: sayHeelo: Heelo")
     }
 }

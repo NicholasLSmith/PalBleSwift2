@@ -95,7 +95,7 @@ enum PalActivatorV1Service: String, ServiceIdentifier {
     
     
     public override init(scanResult: ScannedPeripheral) {
-        print("PalActivatorV1: init")
+        //print("PalBleSwift: PalActivatorV1: init")
         super.init(scanResult: scanResult)
     }
     

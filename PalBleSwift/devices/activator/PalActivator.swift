@@ -77,7 +77,7 @@ enum PalActivatorError: Error {
     }
     
     @objc public func setSleep() {
-        print("PalActivator: setSleep: Method not supported for older Activator modesl")
+        print("PalActivator: setSleep: Method not supported for older Activator models")
     }
     
     
