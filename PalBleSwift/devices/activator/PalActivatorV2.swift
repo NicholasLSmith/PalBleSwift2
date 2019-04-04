@@ -54,6 +54,8 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
     var stage0 = false
     var stage1 = false
     
+    var settingHaptic = false
+    
     
     public override init(scanResult: ScannedPeripheral) {
         //print("PalBleSwift: PalActivatorV2: init")
@@ -72,6 +74,7 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
         }
         
         print("PalBleSwift: PalActivatorV2: setHapticFeedback: Connecting to set haptic")
+        settingHaptic = on
         compositeDisposable = CompositeDisposable()
         if(compositeDisposable!.insert(bleDevice.establishConnection()
             .flatMapFirst { $0.writeValue(Data.fromHexString(string: (on ? PalActivatorV2.COMMAND_SET_HAPTIC_ON : PalActivatorV2.COMMAND_SET_HAPTIC_OFF)), for: PalDeviceCharacteristic.setup, type: .withResponse) }
@@ -84,7 +87,7 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
     func onHapticResult(char: Characteristic) {
         print("PalBleSwift: PalActivatorV2: onHapticResult: Haptic command sent - " + (char.value?.hexadecimalString ?? "value not found"))
         dispose()
-        sendOnHapticSet(on: (char.value?.hexadecimalString)! == PalActivatorV2.COMMAND_SET_HAPTIC_ON)
+        sendOnHapticSet(on: settingHaptic)
     }
     
     func onHapticError(error: Error) {
