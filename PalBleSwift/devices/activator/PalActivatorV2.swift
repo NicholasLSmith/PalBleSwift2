@@ -77,6 +77,7 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
         settingHaptic = on
         compositeDisposable = CompositeDisposable()
         if(compositeDisposable!.insert(bleDevice.establishConnection()
+            .do(onDispose: { self.compositeDisposable = nil })
             .flatMapFirst { $0.writeValue(Data.fromHexString(string: (on ? PalActivatorV2.COMMAND_SET_HAPTIC_ON : PalActivatorV2.COMMAND_SET_HAPTIC_OFF)), for: PalDeviceCharacteristic.setup, type: .withResponse) }
             .subscribe(onNext: onHapticResult, onError: onHapticError)) == nil) {
             return false
@@ -111,6 +112,7 @@ enum PalActivatorV2Service: String, ServiceIdentifier {
         reconnectOnDisconnect = 0
         compositeDisposable = CompositeDisposable()
         if(compositeDisposable!.insert(bleDevice.establishConnection()
+            .do(onDispose: { self.compositeDisposable = nil })
             .flatMapFirst { $0.writeValue(Data.fromHexString(string: PalActivatorV2.COMMAND_SET_MODE_SLEEP), for: PalDeviceCharacteristic.setup, type: .withResponse) }
             .subscribe(onNext: onSleepResult, onError: onSleepError)) == nil) {
             print("PalBleSwift: PalActivatorV2: setSleep: Error")

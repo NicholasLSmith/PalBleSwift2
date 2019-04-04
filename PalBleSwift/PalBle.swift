@@ -29,6 +29,8 @@ import RxSwift
     var scanStopped = false;
     var timeOut = 10;
     
+    var foundDevice: PalDevice?
+    
     
     @objc override public init() {
         rxBleClient = CentralManager(queue: .main)
@@ -208,7 +210,7 @@ import RxSwift
     }
     
     func onConnectResult(scanResult: ScannedPeripheral) {
-        let foundDevice = PalDeviceFactory.getDevice(scanResult: scanResult)
+        foundDevice = PalDeviceFactory.getDevice(scanResult: scanResult)
         if(!hasCorrectSerial(foundDevice: foundDevice)) {
             return
         }
