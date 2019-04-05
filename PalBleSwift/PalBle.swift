@@ -29,10 +29,14 @@ import RxSwift
     var scanStopped = false;
     var timeOut = 10;
     
-    var foundDevice: PalDevice?
+    //var foundDevice: PalDevice?
     
     
     @objc override public init() {
+        if let thisFramework = Bundle.allFrameworks.first(where: { $0.bundleIdentifier != nil && $0.bundleIdentifier!.elementsEqual("com.paltechnologies.PalBleSwift") }) {
+            print("PalBleSwift: PalBle: Library Version: " + (thisFramework.infoDictionary!["CFBundleShortVersionString"] as? String ?? "Failed to fetch version"))
+        }
+        
         rxBleClient = CentralManager(queue: .main)
     }
     
@@ -210,7 +214,7 @@ import RxSwift
     }
     
     func onConnectResult(scanResult: ScannedPeripheral) {
-        foundDevice = PalDeviceFactory.getDevice(scanResult: scanResult)
+        let foundDevice = PalDeviceFactory.getDevice(scanResult: scanResult)
         if(!hasCorrectSerial(foundDevice: foundDevice)) {
             return
         }
