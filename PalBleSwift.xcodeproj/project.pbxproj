@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14D3B6B22A949FC004FDC33 /* PalAgileRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D3B6A22A949FC004FDC33 /* PalAgileRT.swift */; };
+		E14D3B6D22A94A17004FDC33 /* AgileRTListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D3B6C22A94A17004FDC33 /* AgileRTListener.swift */; };
 		E15AF4C922521D56006097E9 /* PalBleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4BF22521D56006097E9 /* PalBleSwift.framework */; };
 		E15AF4CE22521D56006097E9 /* PalBleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AF4CD22521D56006097E9 /* PalBleSwiftTests.swift */; };
 		E15AF4D022521D56006097E9 /* PalBleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E15AF4C222521D56006097E9 /* PalBleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E14D3B6A22A949FC004FDC33 /* PalAgileRT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalAgileRT.swift; sourceTree = "<group>"; };
+		E14D3B6C22A94A17004FDC33 /* AgileRTListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileRTListener.swift; sourceTree = "<group>"; };
 		E15AF4BF22521D56006097E9 /* PalBleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PalBleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15AF4C222521D56006097E9 /* PalBleSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PalBleSwift.h; sourceTree = "<group>"; };
 		E15AF4C322521D56006097E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E14D3B6922A94979004FDC33 /* agile_rt */ = {
+			isa = PBXGroup;
+			children = (
+				E14D3B6A22A949FC004FDC33 /* PalAgileRT.swift */,
+				E14D3B6C22A94A17004FDC33 /* AgileRTListener.swift */,
+			);
+			path = agile_rt;
+			sourceTree = "<group>";
+		};
 		E15AF4B522521D56006097E9 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 		E1B2BE8322522126003C7563 /* devices */ = {
 			isa = PBXGroup;
 			children = (
+				E14D3B6922A94979004FDC33 /* agile_rt */,
 				E1B2BE862252213D003C7563 /* DeviceListener.swift */,
 				E1B2BE882252213E003C7563 /* Identifiers.swift */,
 				E1B2BE872252213E003C7563 /* PalDevice.swift */,
@@ -309,6 +323,7 @@
 			files = (
 				E1B2BE9422522149003C7563 /* PalActivatorV1.swift in Sources */,
 				E1B2BE992252215B003C7563 /* DaySummary.swift in Sources */,
+				E14D3B6D22A94A17004FDC33 /* AgileRTListener.swift in Sources */,
 				E1B2BE9322522149003C7563 /* ActivatorListener.swift in Sources */,
 				E1B2BE7F225220B6003C7563 /* ConnectListener.swift in Sources */,
 				E1B2BE7E225220B6003C7563 /* PalListener.swift in Sources */,
@@ -320,6 +335,7 @@
 				E1B2BE7B225220B6003C7563 /* ScanParameters.swift in Sources */,
 				E1B2BE9122522149003C7563 /* PalActivatorV2.swift in Sources */,
 				E1B2BE7A225220B6003C7563 /* Data_extension.swift in Sources */,
+				E14D3B6B22A949FC004FDC33 /* PalAgileRT.swift in Sources */,
 				E1B2BE79225220B6003C7563 /* ScanListener.swift in Sources */,
 				E1B2BE8B2252213E003C7563 /* PalDevice.swift in Sources */,
 				E1B2BE9222522149003C7563 /* PalActivator.swift in Sources */,

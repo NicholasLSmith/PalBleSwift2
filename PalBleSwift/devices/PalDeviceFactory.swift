@@ -13,7 +13,7 @@ public class PalDeviceFactory {
     public static func getDevice(scanResult : ScannedPeripheral) -> PalDevice? {
         if let name = scanResult.peripheral.name {
             if(name == "AgileRT") {
-                return nil
+                return PalAgileRT(scanResult: scanResult)
             }
             if(name == "Activator") {
                 let msd = scanResult.advertisementData.manufacturerData
