@@ -70,7 +70,7 @@ enum PalDeviceService: String, ServiceIdentifier {
     var bootCount = -1
     var key: Data?
     
-    var listener: DeviceListener?
+    var listener: PalDeviceListener?
     
     var compositeDisposable: CompositeDisposable?
     
@@ -155,7 +155,7 @@ enum PalDeviceService: String, ServiceIdentifier {
     }
     
     
-    @objc public func connect(key: String?, listener: DeviceListener) {
+    @objc public func connect(key: String?, listener: PalDeviceListener) {
         reconnectOnDisconnect = PalDevice.RECONNECTION_ATTEMPTS
         setListener(listener: listener)
         
@@ -185,7 +185,7 @@ enum PalDeviceService: String, ServiceIdentifier {
     func dispose() {}
     
     
-    func setListener(listener: DeviceListener) {
+    func setListener(listener: PalDeviceListener) {
         self.listener = listener
     }
     

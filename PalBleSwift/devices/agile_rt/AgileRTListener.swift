@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc public protocol AgileRTListener: DeviceListener {
+@objc public protocol AgileRTListener: PalDeviceListener {
     func onAccelerationNotified(x: Int, y: Int, z: Int);
     func onMagnetometerNotified(bytes: Data);
     func onMemoryNotified(packet: Data);

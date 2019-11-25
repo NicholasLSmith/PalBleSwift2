@@ -7,32 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14CFF3F22CCB47900420AD8 /* PalBuman.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CFF3E22CCB47900420AD8 /* PalBuman.swift */; };
+		E14CFF4122CCB48F00420AD8 /* BumanListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CFF4022CCB48F00420AD8 /* BumanListener.swift */; };
+		E14CFFC822CDF0D800420AD8 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFC322CDF0D800420AD8 /* RxCocoa.framework */; };
+		E14CFFC922CDF0D800420AD8 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFC422CDF0D800420AD8 /* RxBlocking.framework */; };
+		E14CFFCA22CDF0D800420AD8 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFC522CDF0D800420AD8 /* RxSwift.framework */; };
+		E14CFFCB22CDF0D800420AD8 /* RxBluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFC622CDF0D800420AD8 /* RxBluetoothKit.framework */; };
+		E14CFFCC22CDF0D800420AD8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFC722CDF0D800420AD8 /* RxRelay.framework */; };
+		E14CFFDA22CDF27900420AD8 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14CFFD922CDF27900420AD8 /* CryptoSwift.framework */; };
 		E14D3B6B22A949FC004FDC33 /* PalAgileRT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D3B6A22A949FC004FDC33 /* PalAgileRT.swift */; };
 		E14D3B6D22A94A17004FDC33 /* AgileRTListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14D3B6C22A94A17004FDC33 /* AgileRTListener.swift */; };
 		E15AF4C922521D56006097E9 /* PalBleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4BF22521D56006097E9 /* PalBleSwift.framework */; };
 		E15AF4CE22521D56006097E9 /* PalBleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15AF4CD22521D56006097E9 /* PalBleSwiftTests.swift */; };
 		E15AF4D022521D56006097E9 /* PalBleSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = E15AF4C222521D56006097E9 /* PalBleSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E15AF4E022521F9D006097E9 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4D922521F9D006097E9 /* RxBlocking.framework */; };
-		E15AF4E122521F9D006097E9 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DA22521F9D006097E9 /* RxCocoa.framework */; };
-		E15AF4E222521F9D006097E9 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */; };
-		E15AF4E322521F9D006097E9 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DC22521F9D006097E9 /* RxAtomic.framework */; };
-		E15AF4E422521F9D006097E9 /* RxBluetoothKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */; };
-		E15AF4E522521F9D006097E9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AF4DE22521F9D006097E9 /* RxSwift.framework */; };
+		E17F7B4C238826DA008D8BC2 /* DatxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B4B238826DA008D8BC2 /* DatxHeader.swift */; };
+		E17F7B4F23882722008D8BC2 /* AdvertisingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B4E23882722008D8BC2 /* AdvertisingInfo.swift */; };
+		E17F7B5123882730008D8BC2 /* ConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B5023882730008D8BC2 /* ConnectionInfo.swift */; };
+		E17F7B532388273F008D8BC2 /* ConnectionInfoRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B522388273F008D8BC2 /* ConnectionInfoRaw.swift */; };
+		E17F7B552388274E008D8BC2 /* DownloadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B542388274E008D8BC2 /* DownloadInfo.swift */; };
+		E17F7B572388275D008D8BC2 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B562388275D008D8BC2 /* Page.swift */; };
+		E17F7B5923882838008D8BC2 /* PalActivatorV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B5823882838008D8BC2 /* PalActivatorV3.swift */; };
+		E17F7B5C2388287B008D8BC2 /* ActivatorMicroConnectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B5B2388287B008D8BC2 /* ActivatorMicroConnectionInfo.swift */; };
+		E17F7B5E23882898008D8BC2 /* ActivatorMicroContinuousSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B5D23882898008D8BC2 /* ActivatorMicroContinuousSummaries.swift */; };
+		E17F7B6023882972008D8BC2 /* ActivatorMicroEpochs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B5F23882972008D8BC2 /* ActivatorMicroEpochs.swift */; };
+		E17F7B6223882A24008D8BC2 /* ActivatorMicroEpoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6123882A24008D8BC2 /* ActivatorMicroEpoch.swift */; };
+		E17F7B6423882A3F008D8BC2 /* ActivatorMicroSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6323882A3F008D8BC2 /* ActivatorMicroSummaries.swift */; };
+		E17F7B6623882A59008D8BC2 /* ActivatorMicroSummariesRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6523882A59008D8BC2 /* ActivatorMicroSummariesRaw.swift */; };
+		E17F7B6823882A69008D8BC2 /* ActivatorMicroSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6723882A69008D8BC2 /* ActivatorMicroSummary.swift */; };
+		E17F7B6A23882A96008D8BC2 /* PalActivatorMicro.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6923882A96008D8BC2 /* PalActivatorMicro.swift */; };
+		E17F7B6C23882AAA008D8BC2 /* PalActivatorMicroListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6B23882AAA008D8BC2 /* PalActivatorMicroListener.swift */; };
+		E17F7B6E23882ACE008D8BC2 /* PalActivatorMicroEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6D23882ACE008D8BC2 /* PalActivatorMicroEventListener.swift */; };
+		E17F7B7023882AE0008D8BC2 /* PalActivatorMicroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B6F23882AE0008D8BC2 /* PalActivatorMicroService.swift */; };
+		E17F7B7223882AFD008D8BC2 /* PalLam.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7123882AFD008D8BC2 /* PalLam.swift */; };
+		E17F7B7423882B0A008D8BC2 /* PalLamListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7323882B0A008D8BC2 /* PalLamListener.swift */; };
+		E17F7B7623882B25008D8BC2 /* PalStreamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7523882B25008D8BC2 /* PalStreamer.swift */; };
+		E17F7B7823882B30008D8BC2 /* PalStreamerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7723882B30008D8BC2 /* PalStreamerListener.swift */; };
+		E17F7B7A23882B54008D8BC2 /* PalDFU.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7923882B54008D8BC2 /* PalDFU.swift */; };
+		E17F7B7F23882E42008D8BC2 /* PalConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B7E23882E42008D8BC2 /* PalConnect.swift */; };
+		E17F7B8123882E51008D8BC2 /* PalScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B8023882E50008D8BC2 /* PalScan.swift */; };
+		E17F7B8323882EEC008D8BC2 /* PalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17F7B8223882EEC008D8BC2 /* PalHelper.swift */; };
 		E1B2BE71225220A3003C7563 /* PalBle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE70225220A3003C7563 /* PalBle.swift */; };
-		E1B2BE79225220B6003C7563 /* ScanListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE72225220B4003C7563 /* ScanListener.swift */; };
+		E1B2BE79225220B6003C7563 /* PalScanListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE72225220B4003C7563 /* PalScanListener.swift */; };
 		E1B2BE7A225220B6003C7563 /* Data_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE73225220B4003C7563 /* Data_extension.swift */; };
 		E1B2BE7B225220B6003C7563 /* ScanParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE74225220B4003C7563 /* ScanParameters.swift */; };
 		E1B2BE7C225220B6003C7563 /* BleScanException.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE75225220B4003C7563 /* BleScanException.swift */; };
 		E1B2BE7D225220B6003C7563 /* BluetoothError_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */; };
 		E1B2BE7E225220B6003C7563 /* PalListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE77225220B5003C7563 /* PalListener.swift */; };
-		E1B2BE7F225220B6003C7563 /* ConnectListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE78225220B5003C7563 /* ConnectListener.swift */; };
+		E1B2BE7F225220B6003C7563 /* PalConnectListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE78225220B5003C7563 /* PalConnectListener.swift */; };
 		E1B2BE892252213E003C7563 /* PalDeviceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */; };
-		E1B2BE8A2252213E003C7563 /* DeviceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE862252213D003C7563 /* DeviceListener.swift */; };
+		E1B2BE8A2252213E003C7563 /* PalDeviceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE862252213D003C7563 /* PalDeviceListener.swift */; };
 		E1B2BE8B2252213E003C7563 /* PalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE872252213E003C7563 /* PalDevice.swift */; };
 		E1B2BE8C2252213E003C7563 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE882252213E003C7563 /* Identifiers.swift */; };
 		E1B2BE9122522149003C7563 /* PalActivatorV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */; };
 		E1B2BE9222522149003C7563 /* PalActivator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8E22522148003C7563 /* PalActivator.swift */; };
-		E1B2BE9322522149003C7563 /* ActivatorListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8F22522148003C7563 /* ActivatorListener.swift */; };
+		E1B2BE9322522149003C7563 /* PalActivatorListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE8F22522148003C7563 /* PalActivatorListener.swift */; };
 		E1B2BE9422522149003C7563 /* PalActivatorV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE9022522149003C7563 /* PalActivatorV1.swift */; };
 		E1B2BE982252215B003C7563 /* PalActivatorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE962252215B003C7563 /* PalActivatorData.swift */; };
 		E1B2BE992252215B003C7563 /* DaySummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2BE972252215B003C7563 /* DaySummary.swift */; };
@@ -49,6 +77,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E14CFF3E22CCB47900420AD8 /* PalBuman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalBuman.swift; sourceTree = "<group>"; };
+		E14CFF4022CCB48F00420AD8 /* BumanListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BumanListener.swift; sourceTree = "<group>"; };
+		E14CFFC322CDF0D800420AD8 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = SOURCE_ROOT; };
+		E14CFFC422CDF0D800420AD8 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = SOURCE_ROOT; };
+		E14CFFC522CDF0D800420AD8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = SOURCE_ROOT; };
+		E14CFFC622CDF0D800420AD8 /* RxBluetoothKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBluetoothKit.framework; path = Carthage/Build/iOS/RxBluetoothKit.framework; sourceTree = SOURCE_ROOT; };
+		E14CFFC722CDF0D800420AD8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = SOURCE_ROOT; };
+		E14CFFD922CDF27900420AD8 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = SOURCE_ROOT; };
 		E14D3B6A22A949FC004FDC33 /* PalAgileRT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalAgileRT.swift; sourceTree = "<group>"; };
 		E14D3B6C22A94A17004FDC33 /* AgileRTListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileRTListener.swift; sourceTree = "<group>"; };
 		E15AF4BF22521D56006097E9 /* PalBleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PalBleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,28 +93,47 @@
 		E15AF4C822521D56006097E9 /* PalBleSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PalBleSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15AF4CD22521D56006097E9 /* PalBleSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalBleSwiftTests.swift; sourceTree = "<group>"; };
 		E15AF4CF22521D56006097E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E15AF4D922521F9D006097E9 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
-		E15AF4DA22521F9D006097E9 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
-		E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = "<group>"; };
-		E15AF4DC22521F9D006097E9 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxAtomic.framework; sourceTree = "<group>"; };
-		E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBluetoothKit.framework; sourceTree = "<group>"; };
-		E15AF4DE22521F9D006097E9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
-		E15AF4DF22521F9D006097E9 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
+		E17F7B4B238826DA008D8BC2 /* DatxHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatxHeader.swift; sourceTree = "<group>"; };
+		E17F7B4E23882722008D8BC2 /* AdvertisingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingInfo.swift; sourceTree = "<group>"; };
+		E17F7B5023882730008D8BC2 /* ConnectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfo.swift; sourceTree = "<group>"; };
+		E17F7B522388273F008D8BC2 /* ConnectionInfoRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoRaw.swift; sourceTree = "<group>"; };
+		E17F7B542388274E008D8BC2 /* DownloadInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadInfo.swift; sourceTree = "<group>"; };
+		E17F7B562388275D008D8BC2 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		E17F7B5823882838008D8BC2 /* PalActivatorV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalActivatorV3.swift; sourceTree = "<group>"; };
+		E17F7B5B2388287B008D8BC2 /* ActivatorMicroConnectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroConnectionInfo.swift; sourceTree = "<group>"; };
+		E17F7B5D23882898008D8BC2 /* ActivatorMicroContinuousSummaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroContinuousSummaries.swift; sourceTree = "<group>"; };
+		E17F7B5F23882972008D8BC2 /* ActivatorMicroEpochs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroEpochs.swift; sourceTree = "<group>"; };
+		E17F7B6123882A24008D8BC2 /* ActivatorMicroEpoch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroEpoch.swift; sourceTree = "<group>"; };
+		E17F7B6323882A3F008D8BC2 /* ActivatorMicroSummaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroSummaries.swift; sourceTree = "<group>"; };
+		E17F7B6523882A59008D8BC2 /* ActivatorMicroSummariesRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroSummariesRaw.swift; sourceTree = "<group>"; };
+		E17F7B6723882A69008D8BC2 /* ActivatorMicroSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivatorMicroSummary.swift; sourceTree = "<group>"; };
+		E17F7B6923882A96008D8BC2 /* PalActivatorMicro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalActivatorMicro.swift; sourceTree = "<group>"; };
+		E17F7B6B23882AAA008D8BC2 /* PalActivatorMicroListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalActivatorMicroListener.swift; sourceTree = "<group>"; };
+		E17F7B6D23882ACE008D8BC2 /* PalActivatorMicroEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalActivatorMicroEventListener.swift; sourceTree = "<group>"; };
+		E17F7B6F23882AE0008D8BC2 /* PalActivatorMicroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalActivatorMicroService.swift; sourceTree = "<group>"; };
+		E17F7B7123882AFD008D8BC2 /* PalLam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalLam.swift; sourceTree = "<group>"; };
+		E17F7B7323882B0A008D8BC2 /* PalLamListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalLamListener.swift; sourceTree = "<group>"; };
+		E17F7B7523882B25008D8BC2 /* PalStreamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalStreamer.swift; sourceTree = "<group>"; };
+		E17F7B7723882B30008D8BC2 /* PalStreamerListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalStreamerListener.swift; sourceTree = "<group>"; };
+		E17F7B7923882B54008D8BC2 /* PalDFU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDFU.swift; sourceTree = "<group>"; };
+		E17F7B7E23882E42008D8BC2 /* PalConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalConnect.swift; sourceTree = "<group>"; };
+		E17F7B8023882E50008D8BC2 /* PalScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalScan.swift; sourceTree = "<group>"; };
+		E17F7B8223882EEC008D8BC2 /* PalHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalHelper.swift; sourceTree = "<group>"; };
 		E1B2BE70225220A3003C7563 /* PalBle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalBle.swift; sourceTree = "<group>"; };
-		E1B2BE72225220B4003C7563 /* ScanListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanListener.swift; sourceTree = "<group>"; };
+		E1B2BE72225220B4003C7563 /* PalScanListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalScanListener.swift; sourceTree = "<group>"; };
 		E1B2BE73225220B4003C7563 /* Data_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_extension.swift; sourceTree = "<group>"; };
 		E1B2BE74225220B4003C7563 /* ScanParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanParameters.swift; sourceTree = "<group>"; };
 		E1B2BE75225220B4003C7563 /* BleScanException.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleScanException.swift; sourceTree = "<group>"; };
 		E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothError_extension.swift; sourceTree = "<group>"; };
 		E1B2BE77225220B5003C7563 /* PalListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalListener.swift; sourceTree = "<group>"; };
-		E1B2BE78225220B5003C7563 /* ConnectListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectListener.swift; sourceTree = "<group>"; };
+		E1B2BE78225220B5003C7563 /* PalConnectListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalConnectListener.swift; sourceTree = "<group>"; };
 		E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalDeviceFactory.swift; sourceTree = "<group>"; };
-		E1B2BE862252213D003C7563 /* DeviceListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceListener.swift; sourceTree = "<group>"; };
+		E1B2BE862252213D003C7563 /* PalDeviceListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalDeviceListener.swift; sourceTree = "<group>"; };
 		E1B2BE872252213E003C7563 /* PalDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalDevice.swift; sourceTree = "<group>"; };
 		E1B2BE882252213E003C7563 /* Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorV2.swift; sourceTree = "<group>"; };
 		E1B2BE8E22522148003C7563 /* PalActivator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivator.swift; sourceTree = "<group>"; };
-		E1B2BE8F22522148003C7563 /* ActivatorListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivatorListener.swift; sourceTree = "<group>"; };
+		E1B2BE8F22522148003C7563 /* PalActivatorListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorListener.swift; sourceTree = "<group>"; };
 		E1B2BE9022522149003C7563 /* PalActivatorV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorV1.swift; sourceTree = "<group>"; };
 		E1B2BE962252215B003C7563 /* PalActivatorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PalActivatorData.swift; sourceTree = "<group>"; };
 		E1B2BE972252215B003C7563 /* DaySummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaySummary.swift; sourceTree = "<group>"; };
@@ -89,12 +144,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E15AF4E222521F9D006097E9 /* CryptoSwift.framework in Frameworks */,
-				E15AF4E322521F9D006097E9 /* RxAtomic.framework in Frameworks */,
-				E15AF4E522521F9D006097E9 /* RxSwift.framework in Frameworks */,
-				E15AF4E422521F9D006097E9 /* RxBluetoothKit.framework in Frameworks */,
-				E15AF4E122521F9D006097E9 /* RxCocoa.framework in Frameworks */,
-				E15AF4E022521F9D006097E9 /* RxBlocking.framework in Frameworks */,
+				E14CFFCB22CDF0D800420AD8 /* RxBluetoothKit.framework in Frameworks */,
+				E14CFFC822CDF0D800420AD8 /* RxCocoa.framework in Frameworks */,
+				E14CFFC922CDF0D800420AD8 /* RxBlocking.framework in Frameworks */,
+				E14CFFDA22CDF27900420AD8 /* CryptoSwift.framework in Frameworks */,
+				E14CFFCA22CDF0D800420AD8 /* RxSwift.framework in Frameworks */,
+				E14CFFCC22CDF0D800420AD8 /* RxRelay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +164,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E14CFF3D22CCB44800420AD8 /* buman */ = {
+			isa = PBXGroup;
+			children = (
+				E14CFF3E22CCB47900420AD8 /* PalBuman.swift */,
+				E14CFF4022CCB48F00420AD8 /* BumanListener.swift */,
+			);
+			path = buman;
+			sourceTree = "<group>";
+		};
 		E14D3B6922A94979004FDC33 /* agile_rt */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,17 +204,15 @@
 		E15AF4C122521D56006097E9 /* PalBleSwift */ = {
 			isa = PBXGroup;
 			children = (
+				E17F7B4823882698008D8BC2 /* data */,
 				E1B2BE8322522126003C7563 /* devices */,
-				E1B2BE75225220B4003C7563 /* BleScanException.swift */,
+				E17F7B7B23882D70008D8BC2 /* DFU */,
+				E17F7B7C23882D94008D8BC2 /* exceptions */,
+				E17F7B7D23882DED008D8BC2 /* PalBle */,
 				E1B2BE76225220B5003C7563 /* BluetoothError_extension.swift */,
-				E1B2BE78225220B5003C7563 /* ConnectListener.swift */,
 				E1B2BE73225220B4003C7563 /* Data_extension.swift */,
-				E1B2BE77225220B5003C7563 /* PalListener.swift */,
-				E1B2BE72225220B4003C7563 /* ScanListener.swift */,
-				E1B2BE74225220B4003C7563 /* ScanParameters.swift */,
-				E1B2BE70225220A3003C7563 /* PalBle.swift */,
-				E15AF4C222521D56006097E9 /* PalBleSwift.h */,
 				E15AF4C322521D56006097E9 /* Info.plist */,
+				E17F7B8223882EEC008D8BC2 /* PalHelper.swift */,
 			);
 			path = PalBleSwift;
 			sourceTree = "<group>";
@@ -164,16 +226,141 @@
 			path = PalBleSwiftTests;
 			sourceTree = "<group>";
 		};
+		E17F7B44238824D0008D8BC2 /* activator_micro */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B5A23882866008D8BC2 /* data */,
+				E17F7B6923882A96008D8BC2 /* PalActivatorMicro.swift */,
+				E17F7B6B23882AAA008D8BC2 /* PalActivatorMicroListener.swift */,
+				E17F7B6D23882ACE008D8BC2 /* PalActivatorMicroEventListener.swift */,
+				E17F7B6F23882AE0008D8BC2 /* PalActivatorMicroService.swift */,
+			);
+			path = activator_micro;
+			sourceTree = "<group>";
+		};
+		E17F7B45238824E1008D8BC2 /* lam */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B7123882AFD008D8BC2 /* PalLam.swift */,
+				E17F7B7323882B0A008D8BC2 /* PalLamListener.swift */,
+			);
+			path = lam;
+			sourceTree = "<group>";
+		};
+		E17F7B46238824EE008D8BC2 /* streamer */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B7523882B25008D8BC2 /* PalStreamer.swift */,
+				E17F7B7723882B30008D8BC2 /* PalStreamerListener.swift */,
+			);
+			path = streamer;
+			sourceTree = "<group>";
+		};
+		E17F7B4723882626008D8BC2 /* dfu */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B7923882B54008D8BC2 /* PalDFU.swift */,
+			);
+			path = dfu;
+			sourceTree = "<group>";
+		};
+		E17F7B4823882698008D8BC2 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B49238826A2008D8BC2 /* datx */,
+				E17F7B4A238826A9008D8BC2 /* info */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E17F7B49238826A2008D8BC2 /* datx */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B4B238826DA008D8BC2 /* DatxHeader.swift */,
+			);
+			path = datx;
+			sourceTree = "<group>";
+		};
+		E17F7B4A238826A9008D8BC2 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B4E23882722008D8BC2 /* AdvertisingInfo.swift */,
+				E17F7B5023882730008D8BC2 /* ConnectionInfo.swift */,
+				E17F7B522388273F008D8BC2 /* ConnectionInfoRaw.swift */,
+				E17F7B542388274E008D8BC2 /* DownloadInfo.swift */,
+				E17F7B562388275D008D8BC2 /* Page.swift */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		E17F7B5A23882866008D8BC2 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B5B2388287B008D8BC2 /* ActivatorMicroConnectionInfo.swift */,
+				E17F7B5D23882898008D8BC2 /* ActivatorMicroContinuousSummaries.swift */,
+				E17F7B6123882A24008D8BC2 /* ActivatorMicroEpoch.swift */,
+				E17F7B5F23882972008D8BC2 /* ActivatorMicroEpochs.swift */,
+				E17F7B6323882A3F008D8BC2 /* ActivatorMicroSummaries.swift */,
+				E17F7B6523882A59008D8BC2 /* ActivatorMicroSummariesRaw.swift */,
+				E17F7B6723882A69008D8BC2 /* ActivatorMicroSummary.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		E17F7B7B23882D70008D8BC2 /* DFU */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DFU;
+			sourceTree = "<group>";
+		};
+		E17F7B7C23882D94008D8BC2 /* exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2BE75225220B4003C7563 /* BleScanException.swift */,
+			);
+			path = exceptions;
+			sourceTree = "<group>";
+		};
+		E17F7B7D23882DED008D8BC2 /* PalBle */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2BE70225220A3003C7563 /* PalBle.swift */,
+				E17F7B7E23882E42008D8BC2 /* PalConnect.swift */,
+				E1B2BE78225220B5003C7563 /* PalConnectListener.swift */,
+				E17F7B8023882E50008D8BC2 /* PalScan.swift */,
+				E1B2BE72225220B4003C7563 /* PalScanListener.swift */,
+				E15AF4C222521D56006097E9 /* PalBleSwift.h */,
+				E1B2BE77225220B5003C7563 /* PalListener.swift */,
+				E1B2BE74225220B4003C7563 /* ScanParameters.swift */,
+			);
+			path = PalBle;
+			sourceTree = "<group>";
+		};
+		E17F7B8423882FED008D8BC2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E17F7B8523882FF7008D8BC2 /* helpers */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		E17F7B8523882FF7008D8BC2 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		E1B2BE6F22521FF0003C7563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E15AF4DB22521F9D006097E9 /* CryptoSwift.framework */,
-				E15AF4DC22521F9D006097E9 /* RxAtomic.framework */,
-				E15AF4D922521F9D006097E9 /* RxBlocking.framework */,
-				E15AF4DD22521F9D006097E9 /* RxBluetoothKit.framework */,
-				E15AF4DA22521F9D006097E9 /* RxCocoa.framework */,
-				E15AF4DE22521F9D006097E9 /* RxSwift.framework */,
-				E15AF4DF22521F9D006097E9 /* RxTest.framework */,
+				E14CFFD922CDF27900420AD8 /* CryptoSwift.framework */,
+				E14CFFC422CDF0D800420AD8 /* RxBlocking.framework */,
+				E14CFFC622CDF0D800420AD8 /* RxBluetoothKit.framework */,
+				E14CFFC322CDF0D800420AD8 /* RxCocoa.framework */,
+				E14CFFC722CDF0D800420AD8 /* RxRelay.framework */,
+				E14CFFC522CDF0D800420AD8 /* RxSwift.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -181,12 +368,18 @@
 		E1B2BE8322522126003C7563 /* devices */ = {
 			isa = PBXGroup;
 			children = (
+				E17F7B8423882FED008D8BC2 /* common */,
+				E1B2BE842252212D003C7563 /* activator */,
+				E17F7B44238824D0008D8BC2 /* activator_micro */,
+				E17F7B45238824E1008D8BC2 /* lam */,
+				E17F7B46238824EE008D8BC2 /* streamer */,
+				E17F7B4723882626008D8BC2 /* dfu */,
+				E14CFF3D22CCB44800420AD8 /* buman */,
 				E14D3B6922A94979004FDC33 /* agile_rt */,
-				E1B2BE862252213D003C7563 /* DeviceListener.swift */,
+				E1B2BE862252213D003C7563 /* PalDeviceListener.swift */,
 				E1B2BE882252213E003C7563 /* Identifiers.swift */,
 				E1B2BE872252213E003C7563 /* PalDevice.swift */,
 				E1B2BE852252213D003C7563 /* PalDeviceFactory.swift */,
-				E1B2BE842252212D003C7563 /* activator */,
 			);
 			path = devices;
 			sourceTree = "<group>";
@@ -195,10 +388,11 @@
 			isa = PBXGroup;
 			children = (
 				E1B2BE952252214B003C7563 /* data */,
-				E1B2BE8F22522148003C7563 /* ActivatorListener.swift */,
 				E1B2BE8E22522148003C7563 /* PalActivator.swift */,
+				E1B2BE8F22522148003C7563 /* PalActivatorListener.swift */,
 				E1B2BE9022522149003C7563 /* PalActivatorV1.swift */,
 				E1B2BE8D22522147003C7563 /* PalActivatorV2.swift */,
+				E17F7B5823882838008D8BC2 /* PalActivatorV3.swift */,
 			);
 			path = activator;
 			sourceTree = "<group>";
@@ -323,23 +517,51 @@
 			files = (
 				E1B2BE9422522149003C7563 /* PalActivatorV1.swift in Sources */,
 				E1B2BE992252215B003C7563 /* DaySummary.swift in Sources */,
+				E17F7B7823882B30008D8BC2 /* PalStreamerListener.swift in Sources */,
 				E14D3B6D22A94A17004FDC33 /* AgileRTListener.swift in Sources */,
-				E1B2BE9322522149003C7563 /* ActivatorListener.swift in Sources */,
-				E1B2BE7F225220B6003C7563 /* ConnectListener.swift in Sources */,
+				E1B2BE9322522149003C7563 /* PalActivatorListener.swift in Sources */,
+				E17F7B8123882E51008D8BC2 /* PalScan.swift in Sources */,
+				E17F7B532388273F008D8BC2 /* ConnectionInfoRaw.swift in Sources */,
+				E17F7B8323882EEC008D8BC2 /* PalHelper.swift in Sources */,
+				E17F7B6423882A3F008D8BC2 /* ActivatorMicroSummaries.swift in Sources */,
+				E17F7B6C23882AAA008D8BC2 /* PalActivatorMicroListener.swift in Sources */,
+				E1B2BE7F225220B6003C7563 /* PalConnectListener.swift in Sources */,
+				E17F7B6223882A24008D8BC2 /* ActivatorMicroEpoch.swift in Sources */,
+				E17F7B5C2388287B008D8BC2 /* ActivatorMicroConnectionInfo.swift in Sources */,
+				E17F7B5E23882898008D8BC2 /* ActivatorMicroContinuousSummaries.swift in Sources */,
 				E1B2BE7E225220B6003C7563 /* PalListener.swift in Sources */,
+				E17F7B7A23882B54008D8BC2 /* PalDFU.swift in Sources */,
 				E1B2BE7C225220B6003C7563 /* BleScanException.swift in Sources */,
-				E1B2BE8A2252213E003C7563 /* DeviceListener.swift in Sources */,
+				E1B2BE8A2252213E003C7563 /* PalDeviceListener.swift in Sources */,
+				E17F7B7F23882E42008D8BC2 /* PalConnect.swift in Sources */,
 				E1B2BE7D225220B6003C7563 /* BluetoothError_extension.swift in Sources */,
+				E17F7B7223882AFD008D8BC2 /* PalLam.swift in Sources */,
 				E1B2BE982252215B003C7563 /* PalActivatorData.swift in Sources */,
 				E1B2BE892252213E003C7563 /* PalDeviceFactory.swift in Sources */,
 				E1B2BE7B225220B6003C7563 /* ScanParameters.swift in Sources */,
+				E17F7B4F23882722008D8BC2 /* AdvertisingInfo.swift in Sources */,
 				E1B2BE9122522149003C7563 /* PalActivatorV2.swift in Sources */,
+				E17F7B6823882A69008D8BC2 /* ActivatorMicroSummary.swift in Sources */,
+				E17F7B7423882B0A008D8BC2 /* PalLamListener.swift in Sources */,
+				E17F7B6A23882A96008D8BC2 /* PalActivatorMicro.swift in Sources */,
+				E17F7B6623882A59008D8BC2 /* ActivatorMicroSummariesRaw.swift in Sources */,
 				E1B2BE7A225220B6003C7563 /* Data_extension.swift in Sources */,
 				E14D3B6B22A949FC004FDC33 /* PalAgileRT.swift in Sources */,
-				E1B2BE79225220B6003C7563 /* ScanListener.swift in Sources */,
+				E17F7B5923882838008D8BC2 /* PalActivatorV3.swift in Sources */,
+				E1B2BE79225220B6003C7563 /* PalScanListener.swift in Sources */,
+				E17F7B572388275D008D8BC2 /* Page.swift in Sources */,
+				E17F7B6E23882ACE008D8BC2 /* PalActivatorMicroEventListener.swift in Sources */,
+				E14CFF3F22CCB47900420AD8 /* PalBuman.swift in Sources */,
+				E17F7B5123882730008D8BC2 /* ConnectionInfo.swift in Sources */,
+				E17F7B7623882B25008D8BC2 /* PalStreamer.swift in Sources */,
+				E14CFF4122CCB48F00420AD8 /* BumanListener.swift in Sources */,
 				E1B2BE8B2252213E003C7563 /* PalDevice.swift in Sources */,
 				E1B2BE9222522149003C7563 /* PalActivator.swift in Sources */,
+				E17F7B552388274E008D8BC2 /* DownloadInfo.swift in Sources */,
+				E17F7B4C238826DA008D8BC2 /* DatxHeader.swift in Sources */,
 				E1B2BE8C2252213E003C7563 /* Identifiers.swift in Sources */,
+				E17F7B6023882972008D8BC2 /* ActivatorMicroEpochs.swift in Sources */,
+				E17F7B7023882AE0008D8BC2 /* PalActivatorMicroService.swift in Sources */,
 				E1B2BE71225220A3003C7563 /* PalBle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

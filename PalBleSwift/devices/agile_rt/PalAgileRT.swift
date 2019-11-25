@@ -39,7 +39,7 @@ enum PalAgileRTService: String, ServiceIdentifier {
 @objc public class PalAgileRT: PalDevice {
     private var agileRTListener: AgileRTListener?
     
-    @objc public override func setListener(listener: DeviceListener) {
+    @objc public override func setListener(listener: PalDeviceListener) {
         if let agListener = listener as? AgileRTListener {
             agileRTListener = agListener
         }

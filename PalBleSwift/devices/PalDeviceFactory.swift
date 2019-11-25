@@ -25,6 +25,9 @@ public class PalDeviceFactory {
                 }
                 return PalActivatorV1(scanResult: scanResult)
             }
+            if(name == "BUMAN") {
+                return PalBuman(scanResult: scanResult)
+            }
             if(name == "Agile") {
                 return nil
             }

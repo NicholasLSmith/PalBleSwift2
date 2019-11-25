@@ -22,7 +22,7 @@ enum PalActivatorError: Error {
     }
     var mode = Mode.SERVICE
     
-    var activatorListener: ActivatorListener?
+    var activatorListener: PalActivatorListener?
     
     private var salt: Data?
     private var rawParameters: Data?
@@ -45,8 +45,8 @@ enum PalActivatorError: Error {
         }
     }
     
-    @objc override public func setListener(listener: DeviceListener) {
-        if let actListener = listener as? ActivatorListener {
+    @objc override public func setListener(listener: PalDeviceListener) {
+        if let actListener = listener as? PalActivatorListener {
             activatorListener = actListener
         }
         super.setListener(listener: listener)
